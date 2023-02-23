@@ -1,12 +1,14 @@
 
 const JIL_HOST = 'https://bps-il-stage.adobe.io/'
 const BEARER_TOKEN = ''
-const ORG_ID = ''
 const API_KEY = 'aem-assets-backend-1'
 const tableHeaders = ['First Name', 'Last Name', 'User Name', 'Type']
 const tableId = "user-list-table"
 
-function makeUserRow(user) {
+function appendUserRow(user) {
+
+    
+
     let row = document.createElement('tr');
     row.className = 'user-row'
     let data = document.createElement('td');
@@ -57,7 +59,11 @@ async function getUsersOnClick (){
     }
 
     users.forEach(user => {
-        let row = makeUserRow(user);
+        if (!user.firstName) {
+            return;
+        }
+
+        let row = appendUserRow(user);
         table.append(row)
     })
 
@@ -67,13 +73,13 @@ export default async function decorate(block) {
     // Build the empty table
     const table = document.createElement('table');
     table.id = tableId;
-    let row = document.createElement('tr');
+    let column = document.createElement('tr');
     tableHeaders.forEach(title => {
         let th = document.createElement('th');
         th.innerText = title;
-        row.append(th)
+        column.append(th)
     });
-    table.append(row);
+    table.append(column);
 
     // Find button by Title. 
     var button = document.querySelector('[title="Get Users"]');
