@@ -1,0 +1,10 @@
+/* block specific CSS goes here */
+.user-list tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.user-list td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
