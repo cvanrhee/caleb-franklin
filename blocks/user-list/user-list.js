@@ -73,13 +73,14 @@ export default async function decorate(block) {
     // Build the empty table
     const table = document.createElement('table');
     table.id = tableId;
-    let column = document.createElement('tr');
+    let row = document.createElement('tr');
     tableHeaders.forEach(title => {
         let th = document.createElement('th');
         th.innerText = title;
-        column.append(th)
+        th.className = 'user-list-header'
+        row.append(th)
     });
-    table.append(column);
+    table.append(row);
 
     // Find button by Title. 
     var button = document.querySelector('[title="Get Users"]');

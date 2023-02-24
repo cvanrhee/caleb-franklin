@@ -1,12 +1,16 @@
 /* block specific CSS goes here */
 .user-list tr:nth-child(even) {
-    background-color: #ededec;
+    background-color: #F5F5F5;
+    color: rgb(50, 50, 50);
 }
 
 .user-list table {
     display: flex;
-    justify-content: space-evenly;
     flex-direction: column;
+}
+
+.user-list .user-list-header {
+    border: 1px solid rgb(232, 232, 232);
 }
 
 .user-list tr {
@@ -19,11 +23,12 @@
     flex: 1;
 }
 
-.user-list tr:hover {
-    background-color: rgb(207, 204, 194);
+.user-list .user-row:hover {
+    transform: scale(1.02); 
 }
 
 .user-list td, th {
     text-align: left;
-    padding: 4px;
+    padding: 8px;
 }
+
